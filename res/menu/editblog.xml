@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2009 Nicholas Newberry
+	This software is licensed under the GNU GPLv3.
+	See license.txt for details.
+ -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:id="@+id/editblog_new_blog"
+		  android:title="@string/menu_new_blog"
+		  android:icon="@android:drawable/ic_menu_edit"
+	/>
+	<item android:id="@+id/editblog_delete_blog"
+		  android:title="@string/menu_delete_blog"
+		  android:icon="@android:drawable/ic_menu_delete"
+	/>
+</menu>

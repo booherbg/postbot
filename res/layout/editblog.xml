@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2009 Nicholas Newberry
+	This software is licensed under the GNU GPLv3.
+	See license.txt for details.
+ -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:fillViewport="true"
+>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:gravity="center" android:padding="5px">
+		<TextView
+			android:text="@string/postbot"
+			android:gravity="center_vertical" android:layout_height="fill_parent" android:layout_width="wrap_content" android:layout_weight="0" android:typeface="normal" android:textSize="12pt"/>
+		<ImageView
+			android:gravity="center_vertical" android:layout_height="fill_parent" android:layout_width="wrap_content" android:layout_weight="0" android:background="@drawable/postbot"/>
+	</LinearLayout>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		>
+		<TextView
+			android:text="@string/blog_name_label"
+		android:gravity="center_vertical" android:layout_height="fill_parent" android:layout_width="wrap_content" android:layout_weight="0"/>
+		<Spinner
+			android:id="@+id/spn_blogs"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:layout_weight="1"/>
+	</LinearLayout>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		>
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/txt_blog_server"
+		/>
+		<EditText
+			android:id="@+id/edit_blog_server"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/blog_server"
+		/>
+	</LinearLayout>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		>
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/txt_blog_path"
+		/>
+		<EditText
+			android:id="@+id/edit_blog_path"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/blog_path"
+		/>
+	</LinearLayout>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		>
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/txt_blog_username"
+		/>
+		<EditText
+			android:id="@+id/edit_blog_username"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+		/>
+	</LinearLayout>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		>
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/txt_blog_password"
+		/>
+		<EditText
+			android:id="@+id/edit_blog_password"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:password="true"
+		/>
+	</LinearLayout>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		>
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/txt_blog_alignment"
+		/>
+		<Spinner
+			android:id="@+id/edit_blog_alignment"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+		/>
+	</LinearLayout>
+	<!--
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		>
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="@string/default_tags"
+			android:layout_width="wrap_content"/>
+		<EditText
+			android:id="@+id/edit_default_tags"
+			android:layout_height="wrap_content"
+			android:layout_width="fill_parent"/>
+	</LinearLayout>
+	<TextView
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:text="@string/tags_help"
+			android:layout_width="fill_parent"
+			/>
+	-->
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		>
+		<Button
+			android:id="@+id/btn_cancel_edit_blog"
+			android:layout_height="wrap_content"
+		android:layout_weight="1"
+			android:text="@string/cancel" android:layout_width="fill_parent" android:textSize="8pt"/>
+		<Button
+			android:id="@+id/btn_next_edit_blog"
+			android:layout_height="wrap_content"
+		android:layout_weight="1"
+			android:text="@string/next" android:layout_width="fill_parent" android:textSize="8pt"/>
+	</LinearLayout>
+	<TextView
+		android:id="@+id/edit_blog_output"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_weight="1"
+	android:typeface="normal" android:text="@string/help_editblog" android:paddingTop="5px"/>
+</LinearLayout>
+</ScrollView>

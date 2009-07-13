@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2009 Nicholas Newberry
+	This software is licensed under the GNU GPLv3.
+	See license.txt for details.
+ -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:id="@+id/settings_menu_item"
+		  android:title="@string/menu_settings"
+		  android:icon="@android:drawable/ic_menu_preferences"
+	/>
+	<item android:id="@+id/postbot_forget_posts"
+		  android:title="@string/menu_forget_posts"
+		  android:icon="@android:drawable/ic_menu_delete"
+	/>
+</menu>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2009 Nicholas Newberry
+	This software is licensed under the GNU GPLv3.
+	See license.txt for details.
+ -->
+<resources>
+	<string name="app_name">PostBot</string>
+	<string name="submit">Submit</string>
+	<string name="update">Update</string>
+	<string name="edit_name">Edit Post</string>
+	<string name="category">&lt;select category&gt;</string>
+	<string name="new_post">New Post</string>
+	<string name="new_blog">New Blog</string>
+	<string name="drafts">Drafts</string>
+	<string name="posts">Posts</string>
+	<string name="postbot">PostBot</string>
+	<string name="new_category_label">New Category</string>
+	<string name="alert_dialog_cancel">Cancel</string>
+	<string name="alert_dialog_ok">OK</string>
+	<string name="blog_name_label">Active Blog</string>
+	<string name="save_draft">Save Draft</string>
+	<string name="category_prompt">Choose a Category</string>
+	<string name="save">Save</string>
+	<string name="cancel">Cancel</string>
+	<string name="retrieve">Retrieve</string>
+	<string name="blog_name">Name</string>
+	<string name="blog_server">http://[user].wordpress.com/</string>
+	<string name="blog_path">xmlrpc.php</string>
+	<string name="txt_blog_alignment">Align Images</string>
+	<string name="txt_blog_server">Blog URL</string>
+	<string name="edit_blog">Edit Blog</string>
+	<string name="txt_blog_path">XMLRPC Path</string>
+	<string name="txt_blog_username">Username</string>
+	<string name="txt_blog_password">Password</string>
+	<string name="txt_images">Images: (Menu to add, Click to remove)</string>
+	<string name="test">Test</string>
+	<string name="next">Save</string>
+	<string name="menu_settings">Settings</string>
+	<string name="post_title">Post Title</string>
+	<string name="post_category">Post Category</string>
+	<string name="post_body">Post Body</string>
+	<string name="menu_new_blog">New Blog</string>
+	<string name="menu_delete_blog">Delete Blog</string>
+	<string name="menu_add_category">Add Category</string>
+	<string name="menu_reload_categories">Reload Categories</string>
+	<string name="menu_forget_posts">Forget Posts</string>
+	<string name="menu_forget_drafts">Forget Drafts</string>
+	<string name="menu_forget_post">Forget Post</string>
+	<string name="menu_add_image">Add Image</string>
+	<string name="menu_remove_images">Remove Images</string>
+	<string name="help_editblog">Configure a blog above.\n\nYou can have more than one blog, one of which will be active at a time. The blog shown on this screen when you click "Save" will be the active blog.\n\nNew posts will always be sent to the active blog. The active blog can be changed from this screen at any time.\n\nBlogs can be created and deleted from the Menu on this screen. This screen can be reached through the 'Settings' menu item on the main screen.</string>
+	<string name="err_oome">PostBot has experienced an OutOfMemoryError.\n\nThis sometimes occurs when uploading a post with multiple images in it. A draft of the post you were editing has been saved - please exit and then try posting it again.</string>
+	<string name="confirm_remove_images">Remove all images from this post?\n\nThe images will be removed from the local draft immediately, and when you submit this post, they will be removed on the blog as well.</string>
+	<string name="confirm_remove_image">Remove image from this post?\n\nThe image will be removed from the local draft immediately, and when you submit this post, the image will be removed on the blog as well.</string>
+	<string name="main_help">Click a post to edit it. Drafts are marked with [D]. Posts that have been changed since being posted are marked with [*].</string>
+	<string name="default_tags">Default tags</string>
+	<string name="tags_help">(Separate multiple tags with commas)</string>
+	<string name="tags">Tags (Separate multiple tags with commas)</string>
+</resources>

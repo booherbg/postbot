@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2009 Nicholas Newberry
+	This software is licensed under the GNU GPLv3.
+	See license.txt for details.
+ -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="org.hopto.group18.postbot"
+      android:versionCode="9" android:versionName="1.0.5">
+      <uses-sdk  android:minSdkVersion="1"/>
+    <application android:label="@string/app_name" android:allowClearUserData="true" android:icon="@drawable/postbot">
+        <activity android:name=".PostBot"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    <activity android:name="EditPost" android:label="@string/edit_name">
+        <intent-filter>
+            <action android:name="android.intent.action.SEND" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <data android:mimeType="image/jpeg" />
+        </intent-filter>
+    </activity>
+<activity android:name="EditBlog"></activity>
+</application>
+    <uses-permission android:name="android.permission.INTERNET" />
+
+</manifest> 

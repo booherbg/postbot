@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2009 Nicholas Newberry
+	This software is licensed under the GNU GPLv3.
+	See license.txt for details.
+ -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+    android:layout_width="fill_parent" android:layout_height="wrap_content">
+	<ImageView android:id="@+id/image" xmlns:android="http://schemas.android.com/apk/res/android"
+    	android:layout_height="fill_parent"
+    	android:layout_width="fill_parent"
+    	android:maxHeight="100px"
+    	android:maxWidth="100px"
+    	android:minHeight="100px"
+    	android:minWidth="100px"
+    	android:scaleType="fitXY" android:padding="0px"/>
+</LinearLayout>

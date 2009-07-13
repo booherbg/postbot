@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2009 Nicholas Newberry
+	This software is licensed under the GNU GPLv3.
+	See license.txt for details.
+ -->
+<resources>
+<color name="list_heading_bg">#666</color>
+<color name="list_heading_fg">#ccc</color>
+<color name="list_item_title">#fff</color>
+</resources>

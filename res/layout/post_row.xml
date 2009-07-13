@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2009 Nicholas Newberry
+	This software is licensed under the GNU GPLv3.
+	See license.txt for details.
+ -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+	<TextView android:id="@+id/post_name" xmlns:android="http://schemas.android.com/apk/res/android"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:textSize="10pt" android:ellipsize="end" android:singleLine="true" android:text="Name" android:textColor="@color/list_item_title"/>
+	<TextView android:id="@+id/post_blog" xmlns:android="http://schemas.android.com/apk/res/android"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:textStyle="bold" android:ellipsize="end" android:singleLine="true" android:text="Blog"/>
+	<TextView android:id="@+id/post_body" xmlns:android="http://schemas.android.com/apk/res/android"
+    	android:layout_width="fill_parent"
+    	android:text="Body...
+Body..." android:maxLines="2" android:layout_height="wrap_content" android:ellipsize="end"/>
+</LinearLayout>

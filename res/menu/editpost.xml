@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2009 Nicholas Newberry
+	This software is licensed under the GNU GPLv3.
+	See license.txt for details.
+ -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:id="@+id/editpost_reload_categories"
+		  android:title="@string/menu_reload_categories"
+		  android:icon="@android:drawable/ic_menu_rotate"
+	/>
+	<item android:id="@+id/editpost_add_category"
+		  android:title="@string/menu_add_category"
+		  android:icon="@android:drawable/ic_menu_add"
+	/>
+	<item android:id="@+id/editpost_forget_post"
+		  android:title="@string/menu_forget_post"
+		  android:icon="@android:drawable/ic_menu_delete"
+	/>
+	<item android:id="@+id/editpost_remove_images"
+		  android:title="@string/menu_remove_images"
+		  android:icon="@android:drawable/ic_menu_delete"
+	/>
+	<item android:id="@+id/editpost_add_image"
+		  android:title="@string/menu_add_image"
+		  android:icon="@android:drawable/ic_menu_add"
+	/>
+</menu>

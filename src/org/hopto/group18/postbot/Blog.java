@@ -79,7 +79,7 @@ public class Blog
 		parameters.add(username);
 		parameters.add(new String(password));
 		
-		Object[] response = (Object[]) client.call("blogger.getUsersBlogs", parameters);
+               Object[] response = (Object[]) client.call("blogger.getUsersBlogs", parameters.toArray());
 		// get a blog name to use when posting
 		if( response.length > 0 )
 		{
@@ -94,20 +94,63 @@ public class Blog
 	public void retrieveCategories() throws XMLRPCException
 	{
 		XMLRPCClient client = new XMLRPCClient(URI.create(server + path));
+               Object[] response;
 		
 		Vector<String> parameters = new Vector<String>();
 		parameters.add("0"); // blog id
 		parameters.add(username); // username
 		parameters.add(password); // password
 
-		Object[] response = (Object[]) client.call("wp.getCategories", parameters);
+               // It is possible for there to be no categories.
+               // The *new* Blogger API has categories...
 		categories.clear();
-		for( Object o: response )
+               try
 		{
-			Category category = new Category((HashMap<String,Object>) o);
-			category.setBlogId(blogId);
-			categories.add(category);
+                       response = (Object[]) client.call("wp.getCategories", parameters.toArray());
+                       for( Object o: response )
+                       {
+                               Category category = new Category((HashMap<String,Object>) o);
+                               category.setBlogId(blogId);
+                               categories.add(category);
+                       }
 		}
+               catch (org.xmlrpc.android.XMLRPCFault exNotWP)
+               {
+                       if (exNotWP.getFaultString().equals("Unknown method"))
+                       {
+                               try
+                               {
+                                       response = (Object[]) client.call("mt.getCategoryList", parameters.toArray());
+                                       for( Object o: response )
+                                       {
+                                               Category category = new Category((HashMap<String,Object>) o);
+                                               category.setBlogId(blogId);
+                                               categories.add(category);
+                                       }
+                               }
+                               catch (org.xmlrpc.android.XMLRPCFault exNotMT)
+                               {
+                                       if (exNotMT.getFaultString().equals("Unknown method"))
+                                       {
+//                                             try
+//                                             {
+//                                                     response = (Object[]) client.call("metaWeblog.getCategories", parameters.toArray());
+//                                                     // TODO: Handle response.
+//                                                     // Doc: http://msdn.microsoft.com/en-us/library/aa905667.aspx
+//                                             }
+//                                             catch (org.xmlrpc.android.XMLRPCFault exNotMWL)
+//                                             {
+//                                                     if (exNotMWL.getFaultString() != "Unknown method")
+//                                                             throw exNotMWL;
+//                                             }
+                                       }
+                                       else
+                                               throw exNotMT;
+                               }
+                       }
+                       else
+                               throw exNotWP;
+               }
 	}
 	
 	public Object post(Post post, boolean publish, Vector<Image> images) throws IOException, XMLRPCException
@@ -145,7 +188,7 @@ public class Blog
 			//categoryParameters.put("mt_keywords", "test tags, out");
 			//parameters.add(categoryParameters);
 
-			response = client.call("blogger.newPost", parameters);
+                       response = client.call("blogger.newPost", parameters.toArray());
 
 			post.setSubmitted(true);
 			post.setPublished(publish);
@@ -166,7 +209,7 @@ public class Blog
 			parameters.add(xml.toString()); // post content
 			parameters.add(publish ? "1" : "0"); // publish
 
-			response = client.call("blogger.editPost", parameters);
+                       response = client.call("blogger.editPost", parameters.toArray());
 
 			if( response instanceof Boolean )
 			{
@@ -193,7 +236,7 @@ public class Blog
 		parameters.add(username); // username
 		parameters.add(password); // password
 
-		Object response = client.call("blogger.getPost", parameters);
+               Object response = client.call("blogger.getPost", parameters.toArray());
 		
 		if( response instanceof String )
 			return (String) response;
@@ -211,7 +254,7 @@ public class Blog
 		parameters.add(password); // password
 		parameters.add(false); // publish
 		
-		Object response = client.call("blogger.deletePost", parameters);
+               Object response = client.call("blogger.deletePost", parameters.toArray());
 		
 		post.setSubmitted(false);
 		post.setPublished(false);
@@ -233,7 +276,7 @@ public class Blog
 		categoryParameters.put(KEY_CATEGORY_DESCRIPTION, category.getDescription());
 		parameters.add(categoryParameters);
 
-		Object response = client.call("wp.newCategory", parameters);
+               Object response = client.call("wp.newCategory", parameters.toArray());
 		
 		int categoryId = 0;
 		// my wordpress blogs both give back Integer
@@ -278,7 +321,7 @@ public class Blog
 		imageParameters.put(KEY_FILE_BITS, img.getContent());
 		imageParameters.put(KEY_FILE_OVERWRITE, Boolean.toString(DEF_UPLOAD_FILE_OVERWRITE));
 		parameters.add(imageParameters);
-		Object response = client.call("wp.uploadFile", parameters);
+               Object response = client.call("wp.uploadFile", parameters.toArray());
 
 		HashMap<String,String> map = (HashMap<String,String>) response;
 		
@@ -290,7 +333,7 @@ public class Blog
 			imageParameters.put(KEY_FILE_NAME, img.getThumbnailName());
 			imageParameters.put(KEY_FILE_BITS, thumbnail);
 
-			response = client.call("wp.uploadFile", parameters);
+                       response = client.call("wp.uploadFile", parameters.toArray());
 
 			map = (HashMap<String,String>) response;
 			

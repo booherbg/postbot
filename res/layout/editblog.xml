@@ -11,12 +11,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical"
 	android:layout_width="fill_parent"
-	android:layout_height="fill_parent"
+	android:layout_height="wrap_content"
 	>
 	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 		android:orientation="horizontal"
 		android:layout_width="fill_parent"
-		android:layout_height="wrap_content" android:gravity="center" android:padding="5px">
+		android:layout_height="wrap_content" android:gravity="center" android:padding="5dp">
 		<TextView
 			android:text="@string/postbot"
 			android:gravity="center_vertical" android:layout_height="fill_parent" android:layout_width="wrap_content" android:layout_weight="0" android:typeface="normal" android:textSize="12pt"/>
@@ -162,6 +162,6 @@
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent"
 		android:layout_weight="1"
-	android:typeface="normal" android:text="@string/help_editblog" android:paddingTop="5px"/>
+	android:typeface="normal" android:text="@string/help_editblog" android:paddingTop="5dp"/>
 </LinearLayout>
 </ScrollView>

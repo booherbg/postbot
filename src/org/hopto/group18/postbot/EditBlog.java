@@ -6,14 +6,15 @@
 package org.hopto.group18.postbot;
 
 import java.security.InvalidParameterException;
+import java.sql.SQLException;
 import java.util.Vector;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.DialogInterface.OnClickListener;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteCursor;
 import android.os.Bundle;
@@ -61,13 +62,19 @@ public class EditBlog extends Activity
 	private Blog mBlog;
 	
 	@Override
-	protected void onCreate(Bundle savedInstanceState)
+	protected void onCreate(Bundle savedInstanceState) throws InvalidParameterException
 	{
 		super.onCreate(savedInstanceState);
 		this.setContentView(R.layout.editblog);
 		
 		mDbAdapter = new PostBotDbAdapter(this, this);
-		mDbAdapter.open();
+		try {
+			mDbAdapter.open();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			throw new InvalidParameterException(e.getMessage());
+		}
 		
 		mCancel = (Button) findViewById(R.id.btn_cancel_edit_blog);
 		mSave = (Button) findViewById(R.id.btn_next_edit_blog);

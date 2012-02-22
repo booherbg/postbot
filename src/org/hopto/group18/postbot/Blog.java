@@ -305,6 +305,7 @@ public class Blog
 		return response;
 	}
 
+	@SuppressWarnings("unchecked")
 	public String uploadImage(Image img) throws XMLRPCException
 	{
 		Log.d(TAG, "Uploading image " + img.getUri());

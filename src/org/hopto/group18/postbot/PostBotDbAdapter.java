@@ -5,6 +5,7 @@
 
 package org.hopto.group18.postbot;
 
+import java.sql.SQLException;
 import java.util.Vector;
 
 import org.hopto.group18.postbot.Blog.Alignment;
@@ -14,7 +15,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.CursorIndexOutOfBoundsException;
-import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;

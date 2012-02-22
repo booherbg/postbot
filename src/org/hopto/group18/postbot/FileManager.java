@@ -11,8 +11,8 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Bitmap.CompressFormat;
+import android.graphics.BitmapFactory;
 
 public class FileManager
 {

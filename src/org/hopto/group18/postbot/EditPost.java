@@ -7,6 +7,7 @@ package org.hopto.group18.postbot;
 
 import java.io.IOException;
 import java.security.InvalidParameterException;
+import java.sql.SQLException;
 import java.util.Random;
 import java.util.Vector;
 
@@ -33,10 +34,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
+import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -376,7 +377,7 @@ public class EditPost extends Activity
 		});
     }
 
-	private void initData(Bundle bundle) throws InvalidParameterException
+	private void initData(Bundle bundle) throws InvalidParameterException, SQLException
     {
         if( bundle != null )
         {

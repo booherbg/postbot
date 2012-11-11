@@ -104,15 +104,15 @@ public class Blog
                // It is possible for there to be no categories.
                // The *new* Blogger API has categories...
 		categories.clear();
-               try
+       try
 		{
-                       response = (Object[]) client.call("wp.getCategories", parameters.toArray());
-                       for( Object o: response )
-                       {
-                               Category category = new Category((HashMap<String,Object>) o);
-                               category.setBlogId(blogId);
-                               categories.add(category);
-                       }
+           response = (Object[]) client.call("wp.getCategories", parameters.toArray());
+	       for( Object o: response )
+	       {
+	               Category category = new Category((HashMap<String,Object>) o);
+	               category.setBlogId(blogId);
+	               categories.add(category);
+	       }
 		}
                catch (org.xmlrpc.android.XMLRPCFault exNotWP)
                {
@@ -333,11 +333,8 @@ public class Blog
 		{
 			imageParameters.put(KEY_FILE_NAME, img.getThumbnailName());
 			imageParameters.put(KEY_FILE_BITS, thumbnail);
-
-                       response = client.call("wp.uploadFile", parameters.toArray());
-
+            response = client.call("wp.uploadFile", parameters.toArray());
 			map = (HashMap<String,String>) response;
-			
 			img.setThumbnailUrl(map.get(KEY_FILE_URL));
 		}
 		
